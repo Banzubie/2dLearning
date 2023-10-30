@@ -6,7 +6,7 @@ var score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +37,7 @@ func _on_mob_timer_timeout():
 	mob.rotation = direction
 	
 	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	mob.linear_velocity = velocity.rotated(direction)
 	
 	add_child(mob)
 	
